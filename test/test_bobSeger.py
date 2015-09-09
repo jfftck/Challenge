@@ -17,8 +17,8 @@ class TestBobSeger(TestCase):
 
         bob_seger = BobSeger()
 
-        if bob_seger.find_longest_with_knight_moves(test, ['algol', 'fortran', 'simula']) != 'fortran':
-            self.fail('Failed simple test.')
+        self.assertEqual(bob_seger.find_longest_with_knight_moves(test, ['algol', 'fortran', 'simula']),
+                         'fortran', 'Failed simple test.')
 
         all_words = """ACT I
 SCENE I. The king of Navarre's park.
@@ -6276,5 +6276,5 @@ ADRIANO DE ARMADO
                                     'Q W O P M T C P',
                                     'K I P A C K E T']]
 
-        if bob_seger.find_longest_with_knight_moves(test, all_words) != 'honorificabilitudinitatibus':
-            self.fail('Failed Shakespeare test.')
+        self.assertEqual(bob_seger.find_longest_with_knight_moves(test, all_words),
+                         'honorificabilitudinitatibus', 'Failed Shakespeare test.')
